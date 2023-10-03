@@ -1,0 +1,473 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 2.0 (March 8, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	11pt, % Set the default font size, options include: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt
+	%t, % Uncomment to vertically align all slide content to the top of the slide, rather than the default centered
+	aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which matches the aspect ratio of 1080p and 4K screens and projectors
+]{beamer}
+
+\graphicspath{{Images/}{./}} % Specifies where to look for included images (trailing slash required)
+
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
+
+%----------------------------------------------------------------------------------------
+%	SELECT LAYOUT THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of default layout themes which change the colors and layouts of slides. Below is a list of all themes available, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%----------------------------------------------------------------------------------------
+%	SELECT COLOR THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of color themes that can be applied to any layout theme to change its colors. Uncomment each of these in turn to see how they change the colors of your selected layout theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{monarca}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{spruce}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%----------------------------------------------------------------------------------------
+%	SELECT FONT THEME & FONTS
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with several font themes to easily change the fonts used in various parts of the presentation. Review the comments beside each one to decide if you would like to use it. Note that additional options can be specified for several of these font themes, consult the beamer documentation for more information.
+
+\usefonttheme{default} % Typeset using the default sans serif font
+%\usefonttheme{serif} % Typeset using the default serif font (make sure a sans font isn't being set as the default font if you use this option!)
+%\usefonttheme{structurebold} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in bold
+%\usefonttheme{structureitalicserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in italic serif
+%\usefonttheme{structuresmallcapsserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in small caps serif
+
+%------------------------------------------------
+
+%\usepackage{mathptmx} % Use the Times font for serif text
+\usepackage{palatino} % Use the Palatino font for serif text
+
+%\usepackage{helvet} % Use the Helvetica font for sans serif text
+\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+%\usepackage[default]{FiraSans} % Use the Fira Sans font for sans serif text
+%\usepackage[default]{lato} % Use the Lato font for sans serif text
+\usepackage{filecontents} % used for reference
+\usepackage[style=numeric, sorting=none, backend=biber]{biblatex} % used for reference
+\usepackage{cleveref} % for label and cref
+%----------------------------------------------------------------------------------------
+%	REFERENCE
+%----------------------------------------------------------------------------------------
+
+\addbibresource{myreference.bib}
+
+%----------------------------------------------------------------------------------------
+%	SELECT INNER THEME
+%----------------------------------------------------------------------------------------
+
+% Inner themes change the styling of internal slide elements, for example: bullet points, blocks, bibliography entries, title pages, theorems, etc. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useinnertheme{default}
+\useinnertheme{circles}
+%\useinnertheme{rectangles}
+%\useinnertheme{rounded}
+%\useinnertheme{inmargin}
+
+%----------------------------------------------------------------------------------------
+%	SELECT OUTER THEME
+%----------------------------------------------------------------------------------------
+
+% Outer themes change the overall layout of slides, such as: header and footer lines, sidebars and slide titles. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+%\useoutertheme{smoothbars}
+%\useoutertheme{sidebar}
+%\useoutertheme{split}
+%\useoutertheme{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+%\setbeamertemplate{footline} % Uncomment this line to remove the footer line in all slides
+%\setbeamertemplate{footline}[page number] % Uncomment this line to replace the footer line in all slides with a simple slide count
+
+\setbeamertemplate{navigation symbols}{} % Uncomment this line to remove the navigation symbols from the bottom of all slides
+\setbeamertemplate{caption}[numbered] % numbering the figure in preentation
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title[Meeting 9/5]{Image Processing Prog\#1 \\ Meeting 9/5} % The short title in the optional parameter appears at the bottom of every slide, the full title in the main parameter is only on the title page
+
+% \subtitle{Optional Subtitle} % Presentation subtitle, remove this command if a subtitle isn't required
+
+\author[Bo Han, Chen]{Bo Han, Chen} % Presenter name(s), the optional parameter can contain a shortened version to appear on the bottom of every slide, while the main parameter will appear on the title slide
+
+\institute[NYCU]{National Yang Ming Chiao Tung University, Taiwan \\ \smallskip \textit{bhchen312551074.cs12@nycu.edu.tw}} % Your institution, the optional parameter can be used for the institution shorthand and will appear on the bottom of every slide after author names, while the required parameter is used on the title slide and can include your email address or additional information on separate lines
+
+\date[September 5, 2023]{September 5, 2023} % Presentation date or conference/meeting name, the optional parameter can contain a shortened version to appear on the bottom of every slide, while the required parameter value is output to the title slide
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+	\titlepage % Output the title slide, automatically created using the text entered in the PRESENTATION INFORMATION block above
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS SLIDE
+%----------------------------------------------------------------------------------------
+
+% The table of contents outputs the sections and subsections that appear in your presentation, specified with the standard \section and \subsection commands. You may either display all sections and subsections on one slide with \tableofcontents, or display each section at a time on subsequent slides with \tableofcontents[pausesections]. The latter is useful if you want to step through each section and mention what you will discuss.
+
+\begin{frame}
+	\frametitle{Presentation Overview} % Slide title, remove this command for no title
+	
+	\tableofcontents % Output the table of contents (all sections on one slide)
+	%\tableofcontents[pausesections] % Output the table of contents (break sections up across separate slides)
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION BODY SLIDES
+%----------------------------------------------------------------------------------------
+
+\section{Experiment Setting}
+
+\begin{frame}
+	\frametitle{Experiment Setting}
+	
+	\begin{itemize}
+		\item Environment
+		\begin{itemize}
+			\item Python 3.10.12
+			\item OpenCV 4.8.0
+			\item NumPy 1.23.5
+			\item Platform: Google Colab
+		\end{itemize}
+		\item RGB to GRAY
+		\begin{itemize}
+			\item $0.299 \cdot R + 0.587 \cdot G + 0.114 \cdot B$
+		\end{itemize}
+	 \end{itemize}
+\end{frame}
+
+\section{Intensity Transformation}
+
+	\subsection{Gamma Transformation}
+	
+		\begin{frame}
+			\frametitle{Intensity Transformation}
+			\framesubtitle{Gamma Transformation}
+
+			\begin{figure}[htbp]
+				\includegraphics[width = \linewidth]{gamma_img.png}
+				\caption{Gamma transformation by sampling 5 different $\gamma$ value}
+			   	\label{fig:gamma}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Intensity Transformation}
+			\framesubtitle{Gamma Transformation}
+
+			\begin{figure}[htbp]
+				\centering
+				 \includegraphics[width = 0.5\linewidth]{gamma_hist.png}
+				 \caption{Histogram of images in \cref{fig:gamma}}
+			 \end{figure}
+		\end{frame}
+
+	\subsection{Histogram Equalization}
+
+		\begin{frame}
+			\frametitle{Intensity Transformation}
+			\framesubtitle{Histogram Equalization}
+
+			\begin{figure}[htbp]
+				\includegraphics[width = 0.8\linewidth]{he_img_hist.png}
+				\caption{Comparison with different histogram processing method}
+			\end{figure}
+		\end{frame}
+
+\section{High Pass Filter}
+
+	\subsection{Edge Detection}
+
+		\begin{frame}
+			\frametitle{High Pass Filter}
+			\framesubtitle{Edge Detection}
+
+			\begin{figure}[htbp]
+				\centering
+				 \includegraphics[width = 0.8\linewidth]{edge_detec_1.png}
+				 \caption{Edge detection by Laplacian operator}
+				\label{fig:laplacian}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{High Pass Filter}
+			\framesubtitle{Edge Detection}
+
+			\begin{figure}[htbp]
+				\includegraphics[width = \linewidth]{edge_detec_2.png}
+				\caption{Edge detection by Sobel operator}
+			\end{figure}
+		\end{frame}
+
+	\subsection{Sharpening}
+
+		\begin{frame}
+			\frametitle{High Pass Filter}
+			\framesubtitle{Sharpening}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{sharp_1.png}
+				\caption{Laplacian sharpening and unsharp masking}
+			\end{figure}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{High Pass Filter}
+			\framesubtitle{Sharpening}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{sharp_2.png}
+				\caption{Highboost filtering}
+			\end{figure}
+		\end{frame}
+
+\section{Denoising}
+
+	\subsection{Noise}
+
+		\begin{frame}
+			\frametitle{Denoising}
+			\framesubtitle{Noise}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{noise_1.png}
+				\caption{Additive noise model and PDF}
+				\label{fig:noise_1}
+			\end{figure}
+		\end{frame}
+	
+		\begin{frame}
+			\frametitle{Denoising}
+			\framesubtitle{Noise}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{noise_2.png}
+				\caption{Noise image, histogram, and PSNR}
+				\label{fig:noise_2}
+			\end{figure}
+		\end{frame}
+
+	\subsection{Mean Filter}
+
+		\begin{frame}
+			\frametitle{Denoising}
+			\framesubtitle{Mean Filter}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{mean_filter_1.png}
+				\caption{Mean filter denoising}
+				\label{fig:mean_1}
+			 \end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Denoising}
+			\framesubtitle{Mean Filter}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{mean_filter_2.png}
+				\caption{Mean filter denoising (Cont.)}
+				\label{fig:mean_2}
+			 \end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Mean Filter}
+			\framesubtitle{Arithmetic Mean Filter}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{mean_filter_random_noise_1.png}
+				\caption{Arithmetic mean filter denoising}
+				\label{fig:arith_mean}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Mean Filter}
+			\framesubtitle{Arithmetic Mean Filter}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{mean_filter_random_noise_2.png}
+				\caption{Geometric mean filter denoising}
+				\label{fig:geo_mean}
+			\end{figure}
+		\end{frame}
+
+	\subsection{Order-Static Filter}
+
+		\begin{frame}
+			\frametitle{Order-Static Filter}
+			\framesubtitle{Median Filter}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{median_filter_random_noise.png}
+				\caption{Median filter denoising}
+				\label{fig:median}
+			 \end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Order-Static Filter}
+			\framesubtitle{Pepper Noise}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{pepper_com.png}
+				\caption{Denoising pepper noise image}
+				\label{fig:pepper}
+			 \end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Order-Static Filter}
+			\framesubtitle{Salt Noise}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{salt_com.png}
+				\caption{Denoising salt noise image}
+				\label{fig:salt}
+			 \end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Order-Static Filter}
+			\framesubtitle{Adaptive Median Filter}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{ada_median_1.png}
+				\caption{Median filter denoising}
+				\label{fig:ada_median_1}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Order-Static Filter}
+			\framesubtitle{Adaptive Median Filter}
+
+			\begin{figure}[H]
+				\includegraphics[width = \linewidth]{ada_median_2.png}
+				\caption{Adaptive median filter denoising}
+				\label{fig:ada_median_2}
+			\end{figure}
+		\end{frame}
+
+\section{Conclusion}
+
+	\begin{frame}
+		\frametitle{Conclusion}
+
+		\begin{itemize}
+			\item Design pattern of image processing algorithm
+			\begin{itemize}
+				\item local processing, adaptive parameter, etc
+			\end{itemize}
+			\item Choice of the test image
+			\begin{itemize}
+				\item show the pros and cons of each method in single image
+			\end{itemize}
+			\item Multiple processing
+			\begin{itemize}
+				\item how to implement multiple technique (order, ...)
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+		
+
+
+%----------------------------------------------------------------------------------------
+%	CLOSING SLIDE
+%----------------------------------------------------------------------------------------
+
+\section{Q \& A}
+
+\begin{frame}
+    \frametitle{Q \& A}
+	\begin{center}
+		{\Huge Thanks for Listening}
+		
+		\bigskip\bigskip % Vertical whitespace
+		
+		{\LARGE Q \& A}
+
+		% \bigskip\bigskip
+		% Contact Me: b083040012@g-mail.nsysu.edu.tw
+	\end{center}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
