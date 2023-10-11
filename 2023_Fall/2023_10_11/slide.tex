@@ -1,0 +1,437 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 2.0 (March 8, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	11pt, % Set the default font size, options include: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt
+	%t, % Uncomment to vertically align all slide content to the top of the slide, rather than the default centered
+	aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which matches the aspect ratio of 1080p and 4K screens and projectors
+]{beamer}
+
+\graphicspath{{Images/}{./}} % Specifies where to look for included images (trailing slash required)
+
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
+
+%----------------------------------------------------------------------------------------
+%	SELECT LAYOUT THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of default layout themes which change the colors and layouts of slides. Below is a list of all themes available, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%----------------------------------------------------------------------------------------
+%	SELECT COLOR THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of color themes that can be applied to any layout theme to change its colors. Uncomment each of these in turn to see how they change the colors of your selected layout theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{monarca}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{spruce}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%----------------------------------------------------------------------------------------
+%	SELECT FONT THEME & FONTS
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with several font themes to easily change the fonts used in various parts of the presentation. Review the comments beside each one to decide if you would like to use it. Note that additional options can be specified for several of these font themes, consult the beamer documentation for more information.
+
+\usefonttheme{default} % Typeset using the default sans serif font
+%\usefonttheme{serif} % Typeset using the default serif font (make sure a sans font isn't being set as the default font if you use this option!)
+%\usefonttheme{structurebold} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in bold
+%\usefonttheme{structureitalicserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in italic serif
+%\usefonttheme{structuresmallcapsserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in small caps serif
+
+%------------------------------------------------
+
+%\usepackage{mathptmx} % Use the Times font for serif text
+\usepackage{palatino} % Use the Palatino font for serif text
+
+%\usepackage{helvet} % Use the Helvetica font for sans serif text
+\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+%\usepackage[default]{FiraSans} % Use the Fira Sans font for sans serif text
+%\usepackage[default]{lato} % Use the Lato font for sans serif text
+\usepackage{filecontents} % used for reference
+\usepackage[style=numeric, sorting=none, backend=biber]{biblatex} % used for reference
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE
+%----------------------------------------------------------------------------------------
+
+\addbibresource{myreference.bib}
+
+%----------------------------------------------------------------------------------------
+%	SELECT INNER THEME
+%----------------------------------------------------------------------------------------
+
+% Inner themes change the styling of internal slide elements, for example: bullet points, blocks, bibliography entries, title pages, theorems, etc. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useinnertheme{default}
+\useinnertheme{circles}
+%\useinnertheme{rectangles}
+%\useinnertheme{rounded}
+%\useinnertheme{inmargin}
+
+%----------------------------------------------------------------------------------------
+%	SELECT OUTER THEME
+%----------------------------------------------------------------------------------------
+
+% Outer themes change the overall layout of slides, such as: header and footer lines, sidebars and slide titles. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+%\useoutertheme{smoothbars}
+%\useoutertheme{sidebar}
+%\useoutertheme{split}
+%\useoutertheme{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+%\setbeamertemplate{footline} % Uncomment this line to remove the footer line in all slides
+%\setbeamertemplate{footline}[page number] % Uncomment this line to replace the footer line in all slides with a simple slide count
+
+\setbeamertemplate{navigation symbols}{} % Uncomment this line to remove the navigation symbols from the bottom of all slides
+\setbeamertemplate{caption}[numbered] % numbering the figure in preentation
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title[Meeting 10/11]{Image Processing Prog \\ Meeting 10/11} % The short title in the optional parameter appears at the bottom of every slide, the full title in the main parameter is only on the title page
+
+% \subtitle{Optional Subtitle} % Presentation subtitle, remove this command if a subtitle isn't required
+
+\author[Bo Han, Chen]{Bo Han, Chen} % Presenter name(s), the optional parameter can contain a shortened version to appear on the bottom of every slide, while the main parameter will appear on the title slide
+
+\institute[NYCU]{National Yang Ming Chiao Tung University, Taiwan \\ \smallskip \textit{bhchen312551074.cs12@nycu.edu.tw}} % Your institution, the optional parameter can be used for the institution shorthand and will appear on the bottom of every slide after author names, while the required parameter is used on the title slide and can include your email address or additional information on separate lines
+
+\date[October 11, 2023]{October 11, 2023} % Presentation date or conference/meeting name, the optional parameter can contain a shortened version to appear on the bottom of every slide, while the required parameter value is output to the title slide
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+	\titlepage % Output the title slide, automatically created using the text entered in the PRESENTATION INFORMATION block above
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS SLIDE
+%----------------------------------------------------------------------------------------
+
+% The table of contents outputs the sections and subsections that appear in your presentation, specified with the standard \section and \subsection commands. You may either display all sections and subsections on one slide with \tableofcontents, or display each section at a time on subsequent slides with \tableofcontents[pausesections]. The latter is useful if you want to step through each section and mention what you will discuss.
+
+\begin{frame}
+	\frametitle{Presentation Overview} % Slide title, remove this command for no title
+	
+	\tableofcontents % Output the table of contents (all sections on one slide)
+	%\tableofcontents[pausesections] % Output the table of contents (break sections up across separate slides)
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION BODY SLIDES
+%----------------------------------------------------------------------------------------
+
+\section{Environment}
+
+\begin{frame}
+	\frametitle{Experiment Setting}
+	
+	\begin{itemize}
+		\item Environment
+		\begin{itemize}
+			\item Python 3.10.12
+			\item OpenCV 4.8.0
+			\item NumPy 1.23.5
+			\item Platform: Google Colab
+		\end{itemize}
+	 \end{itemize}
+\end{frame}
+
+\section{Original Canny Edge Detector}
+\subsection{Method}
+
+\begin{frame}
+	\frametitle{Original Canny Edge Detector}
+	\framesubtitle{Method}
+
+	\begin{itemize}
+		\item according to original paper \cite{4767851} and textbook
+	\end{itemize}
+	\begin{enumerate}
+		\item smoothing input image $f$ with Guassian filter $G$, get blurred image $f_s$
+		\item computing gradient magnitude $M_s$ an direction $\alpha$
+		\item apply \emph{nonmaxima suppresion (NMS)} to $M_s$ get the candidate edge point
+		\item using \emph{hysteresis thresholding} for strong ($g_{nh}$) and weak ($g_{nl}$) edge point
+		\item edge tracking by \emph{hysteresis}
+	\end{enumerate}
+\end{frame}
+
+\subsection{Experiment Setting}
+
+\begin{frame}
+	\frametitle{Original Canny Edge Detector}
+	\framesubtitle{Experiment Setting}
+
+	\begin{itemize}
+		\item sample image
+		\begin{itemize}
+			\item lenna
+			\item scene
+		\end{itemize}
+		\item gradient magnitude computation
+		\begin{itemize}
+			\item Sobel operator
+		\end{itemize}
+		\item ratio of $T_H$ and $T_L$
+		\begin{itemize}
+			\item $3:1$
+		\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\subsection{Experiment Result}
+
+\begin{frame}
+	\frametitle{Original Canny Edge Detector}
+	\framesubtitle{Result - lenna}
+
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{lenna_edge_compare.png}
+		\caption{edge detection comparison of lenna}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Original Canny Edge Detector}
+	\framesubtitle{Result - scene}
+
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{scene_edge_compare.png}
+		\caption{edge detection comparison of scene}
+	\end{figure}
+
+\end{frame}
+
+\subsection{Analysis}
+
+\begin{frame}
+	\frametitle{Original Canny Edge Detector}
+	\framesubtitle{Analysis}
+
+	\begin{itemize}
+		\item bad threshold determination
+		\item bad preformance in low contrast area
+		\item sensitive to noise
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{lenna_threshold_compare.png}
+		\caption{result of thresholding - lenna}
+	\end{figure}
+
+\end{frame}
+
+\section{Improved Canny Edge Detector}
+\subsection{Method}
+
+\begin{frame}
+	\frametitle{Improved Canny Edge Detector}
+	\framesubtitle{Method}
+
+	\begin{itemize}
+		\item replace median filter with guassian filter \cite{xuan2017improved}
+		\item modify gradient computation
+		\begin{itemize}
+			\item gravitational field gradient \cite{rong2014improved}
+			\item $G_x = \begin{pmatrix}
+							-\frac{\sqrt{2}}{4} & 0 & \frac{\sqrt{2}}{4} \\
+							-1 & 0 & 1 \\
+							-\frac{\sqrt{2}}{4} & 0 & \frac{\sqrt{2}}{4}
+						\end{pmatrix}$, 
+				  $G_y = \begin{pmatrix}
+							\frac{\sqrt{2}}{4} & 1 & \frac{\sqrt{2}}{4} \\
+							0 & 0 & 0 \\
+							-\frac{\sqrt{2}}{4} & -1 & -\frac{\sqrt{2}}{4}
+						\end{pmatrix}$
+		\end{itemize}
+		\item adaptive thresholding \cite{rong2014improved}
+		\begin{itemize}
+			\item marking non-edge with gradient $< E_{ave} \cdot 20\%$
+			\item determine $T_h$ according to $E$ and $\mu$ of neighbor gradients
+			\item $T_h = E + k \cdot \mu$
+			\item $T_l = T_h \cdot 0.5$
+			\item $k = 1.2$ in the following experiment
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Result}
+
+\begin{frame}
+	\frametitle{Improved Canny Edge Detector}
+	\framesubtitle{Result - lenna}
+
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{lenna_threshold_compare_im.png}
+		\caption{edge detection comparison of lenna with improved algo}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Improved Canny Edge Detector}
+	\framesubtitle{Result - scene}
+
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{scene_threshold_compare_im.png}
+		\caption{edge detection comparison of scene with improved algo}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Improved Canny Edge Detector}
+	\framesubtitle{Result - lenna}
+
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{lenna_edge_compare_im.png}
+		\caption{edge detection comparison of lenna with improved algo}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Improved Canny Edge Detector}
+	\framesubtitle{Result - scene}
+
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{scene_edge_compare_im.png}
+		\caption{edge detection comparison of scene with improved algo}
+	\end{figure}
+
+\end{frame}
+
+\subsection{Analysis}
+
+\begin{frame}
+	\frametitle{Improved Canny Edge Detector}
+	\framesubtitle{Analysis}
+
+	\begin{itemize}
+		\item better edge detection performance
+		\item bad noise reduction
+		\item issues of low contrast area still exist
+	\end{itemize}
+\end{frame}
+
+\section{Future Work}
+
+\begin{frame}
+	\frametitle{Future Work}
+
+	\begin{itemize}
+		\item Otsu’s thresholding method for high / low gradient area \cite{er2009adaptive}
+		\begin{itemize}
+			\item find $T_h$ according to Otsu's result
+		\end{itemize}
+		\item Canny for color image
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=0.3\linewidth]{lenna_his.png}
+		\caption{gradient histogram of lenna}
+	\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\section{References}
+
+\begin{frame}
+	\frametitle{References}
+
+	\printbibliography
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	CLOSING SLIDE
+%----------------------------------------------------------------------------------------
+
+\section{Q \& A}
+
+\begin{frame}
+    \frametitle{Q \& A}
+	\begin{center}
+		{\Huge Thanks for Listening}
+		
+		\bigskip\bigskip % Vertical whitespace
+		
+		{\LARGE Q \& A}
+
+		% \bigskip\bigskip
+		% Contact Me: b083040012@g-mail.nsysu.edu.tw
+	\end{center}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
