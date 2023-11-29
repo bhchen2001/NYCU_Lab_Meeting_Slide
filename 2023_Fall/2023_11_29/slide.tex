@@ -209,7 +209,6 @@
 		\item Python 3.12.0
 		\begin{itemize}
 			\item OpenCV 4.8.1
-			\item Pillow 10.0.1
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -227,7 +226,7 @@
 	\end{itemize}
 	
 	\begin{figure}
-		\includegraphics[width=0.8\linewidth]{./Images/camera_pipeline.png}
+		\includegraphics[width=0.9\linewidth]{./Images/camera_pipeline.png}
 		\caption{Image Acquisition Pipeline}
 	\end{figure}
 
@@ -278,10 +277,11 @@
 			\item fitting terms toward the middle of curve
 		\end{itemize}
 		\item pixel value selection
-		\begin{enumerate}
+		\begin{itemize}
 			\item even distribution
 			\item sampled from low intensity variance region
-		\end{enumerate}
+			\item how many sample value we need?
+		\end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -596,7 +596,7 @@
 						\item selection of reference image
 					\end{itemize}
 					\item improving image selection
-					\item deep learning-based method
+					\item compare with deep learning-based method
 				\end{itemize}
 			}
 		\end{tabular}
